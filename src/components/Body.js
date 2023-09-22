@@ -1,8 +1,9 @@
 import RestaurantCard, { withOpenLabel } from './RestaurantCard';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
+import UserContext from '../utils/UserContext';
 
 const Body = () => {
 	// Local State Variable - Super powerful variable
@@ -46,6 +47,9 @@ const Body = () => {
 	if (onlineStatus === false)
 		return <h1>Look like you are offline ! check your intrnet</h1>;
 
+	// setting user name using context API by getting name from the input box.
+	const { loggedInUser, setUserName } = useContext(UserContext);
+
 	return listOfRestaurants.length === 0 ? (
 		<Shimmer />
 	) : (
@@ -77,7 +81,7 @@ const Body = () => {
 						Search
 					</button>
 				</div>
-				<div className="p-4 m-4 flex items-center">
+				<idv className="p-4 m-4 flex items-center">
 					<button
 						className="px-4 py-1 bg-green-200 rounded"
 						onClick={() => {
@@ -89,6 +93,14 @@ const Body = () => {
 					>
 						Top Rated Restaurants
 					</button>
+				</idv>
+				<div className="p-4 m-4 flex items-center">
+					<label>UserName : </label>
+					<input
+						className="border border-black rounded"
+						value={loggedInUser}
+						onChange={(e) => setUserName(e.target.value)}
+					/>
 				</div>
 			</div>
 			<div className="flex flex-wrap mx-auto">

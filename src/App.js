@@ -29,7 +29,7 @@ const AppLayout = () => {
 	return (
 		// Wrapping whole the app inside the UserContext so that the value will be accessible throughout the whole app. And it override the context data
 		// If we want to provide the data to the specific part of the app only then we can exclude those component from the wrapping
-		<UserContext.Provider value={{ loggedInUser: userName }}>
+		<UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
 			<div className="app">
 				<Header />
 				<Outlet />
