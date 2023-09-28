@@ -9,6 +9,8 @@ import Error from './components/Error';
 import UserContext from './utils/UserContext';
 // import Grocery from './components/Grocery';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import appStore from './utils/appStore';
 
 // LAZY loading - given to us by react,we can import it as a named import.
 const Grocery = lazy(() => import('./components/Grocery'));
@@ -27,14 +29,17 @@ const AppLayout = () => {
 	}, []);
 
 	return (
-		// Wrapping whole the app inside the UserContext so that the value will be accessible throughout the whole app. And it override the context data
-		// If we want to provide the data to the specific part of the app only then we can exclude those component from the wrapping
-		<UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-			<div className="app">
-				<Header />
-				<Outlet />
-			</div>
-		</UserContext.Provider>
+		// wrraping whole app inside the Redux Provider component just like the context API works
+		<Provider store={appStore}>
+			{/* Wrapping whole the app inside the UserContext so that the value will be accessible throughout the whole app. And it override the context data
+		If we want to provide the data to the specific part of the app only then we can exclude those component from the wrapping */}
+			<UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+				<div className="app">
+					<Header />
+					<Outlet />
+				</div>
+			</UserContext.Provider>
+		</Provider>
 	);
 };
 
