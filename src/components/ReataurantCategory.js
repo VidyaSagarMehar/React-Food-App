@@ -21,7 +21,7 @@ const ReataurantCategory = ({
 			<div className="w-6/12 bg-gray-50 shadow-md p-4 m-auto my-3">
 				<div
 					className=" flex justify-between cursor-pointer"
-					onClick={(e) => handleClick(e)}
+					onClick={handleClick}
 				>
 					<span className="font-semibold text-lg">
 						{data.title} ({data.itemCards.length})

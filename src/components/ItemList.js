@@ -9,8 +9,8 @@ const ItemList = ({ items, dummy }) => {
 	const dispatch = useDispatch();
 
 	// Dospatching an action
-	const handleAddItem = () => {
-		dispatch(addItem('Pizza'));
+	const handleAddItem = (item) => {
+		dispatch(addItem(item));
 	};
 
 	return (
@@ -35,7 +35,7 @@ const ItemList = ({ items, dummy }) => {
 					<div className="w-3/12">
 						<img className="rounded" src={CDN_URL + item.card.info.imageId} />
 						<button
-							onClick={handleAddItem}
+							onClick={() => handleAddItem(item)}
 							className="p-2 bg-green-500 absolute ml-14 -my-8 rounded-md text-xs font-bold"
 						>
 							Add +
