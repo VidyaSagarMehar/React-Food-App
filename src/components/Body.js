@@ -81,7 +81,7 @@ const Body = () => {
 						Search
 					</button>
 				</div>
-				<idv className="p-4 m-4 flex items-center">
+				<div className="p-4 m-4 flex items-center">
 					<button
 						className="px-4 py-1 bg-green-200 rounded"
 						onClick={() => {
@@ -93,7 +93,7 @@ const Body = () => {
 					>
 						Top Rated Restaurants
 					</button>
-				</idv>
+				</div>
 				<div className="p-4 m-4 flex items-center">
 					<label>UserName : </label>
 					<input
