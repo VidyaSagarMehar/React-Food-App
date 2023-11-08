@@ -59,3 +59,4 @@
  - Install @babel/preset-react to make JSX work in test cases
  - Include @babel/preset-react inside babel.config.js
  - Install @testing-library/jest-dom
+ - Install @types/jest to show suggestions on the code editor
