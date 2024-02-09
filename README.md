@@ -51,7 +51,7 @@
 # Setting up testing in our app
  - Install React Testing Library
  - Installed jest
- - Installed Babel dependencies
+ - Installed Babel dependencies - read bable docs
  - Configure Babel
  - Configure Parcel Config file to disable babel transpilation
  - Jest configuration - npx jest --init
