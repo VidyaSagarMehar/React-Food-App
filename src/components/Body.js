@@ -33,11 +33,11 @@ const Body = () => {
 
 		// Optional Chaining
 		setListOfRestraunt(
-			json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+			json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
 				?.restaurants || [],
 		);
 		setFilteredRestaurant(
-			json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+			json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
 				?.restaurants || [],
 		);
 	};
