@@ -13,7 +13,7 @@ const RestaurantCard = (props) => {
 	} = resData.info;
 
 	return (
-		<div className="m-4 p-4 w-60 bg-red-100 rounded">
+		<div data-testid="resCard" className="m-4 p-4 w-60 bg-red-100 rounded">
 			<img
 				className="rounded"
 				alt="res-logo"

@@ -14,7 +14,7 @@ const Body = () => {
 
 	const RestaurantCardOpen = withOpenLabel(RestaurantCard);
 
-	console.log(listOfRestaurants);
+	// console.log(listOfRestaurants);
 
 	// Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
 	console.log('Body Rendered');
@@ -58,6 +58,7 @@ const Body = () => {
 				<div className="search p-4 m-4 ">
 					<input
 						type="text"
+						data-testid="searchInput"
 						className="search-box border border-solid border-black"
 						value={searchText}
 						onChange={(e) => {
@@ -86,7 +87,7 @@ const Body = () => {
 						className="px-4 py-1 bg-green-200 rounded"
 						onClick={() => {
 							const filteredList = listOfRestaurants.filter(
-								(res) => res.data.avgRating > 4,
+								(res) => res.info.avgRating > 4,
 							);
 							setListOfRestraunt(filteredList);
 						}}
