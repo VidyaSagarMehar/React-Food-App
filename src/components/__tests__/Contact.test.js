@@ -3,6 +3,21 @@ import Contact from '../Contact';
 import '@testing-library/jest-dom';
 
 describe('Contact Us page Test Case', () => {
+	beforeAll(() => {
+		console.log('Before all'); // It will run before all the test cases
+	});
+
+	beforeEach(() => {
+		console.log('Before each'); //it will run before each test cases
+	});
+
+	afterAll(() => {
+		console.log('After all'); //it woll run after all the test cases
+	});
+	afterEach(() => {
+		console.log('after each'); // it will after each of the test cases
+	});
+
 	//It is just a discription block and we can have multiple describe and describe inside the describe as well
 	test('Should load contact us component', () => {
 		render(<Contact />); // It will test whether this componet is being load on the render of the DOM or not
