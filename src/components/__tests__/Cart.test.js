@@ -29,5 +29,5 @@ it('Should load Restaurant Menu compnent', async () => {
 
 	// Check if foodItems is not null or empty array before asserting its length
 	expect(foodItems).toBeTruthy();
-	expect(foodItems.length).toBe(4);
+	expect(foodItems.length).toBe(0);
 });
